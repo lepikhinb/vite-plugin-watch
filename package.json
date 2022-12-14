@@ -1,0 +1,54 @@
+{
+  "name": "vite-plugin-watch",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run lint && npm run format && vite build && tsc --declaration --emitDeclarationOnly",
+    "lint": "eslint \"src/**\" --fix",
+    "format": "prettier src/ --write"
+  },
+  "description": "Vite plugin to run custom commands on file changes",
+  "keywords": [
+    "vite"
+  ],
+  "author": "Boris Lepikhin<https://twitter.com/lepikhinb>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lepikhinb/vite-plugin-watch.git"
+  },
+  "homepage": "https://github.com/lepikhinb/vite-plugin-watch#readme",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/vite-plugin-watch.umd.cjs",
+  "module": "./dist/vite-plugin-watch.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-plugin-watch.js",
+      "require": "./dist/vite-plugin-watch.umd.cjs"
+    }
+  },
+  "engines": {
+    "node": ">=10.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.7.0",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.1",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "minimatch": "^5.1.1"
+  }
+}
