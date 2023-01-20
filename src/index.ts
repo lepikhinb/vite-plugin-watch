@@ -11,10 +11,10 @@ export const watch = (config: {
   onInit?: boolean
 }): PluginOption => {
   const options = {
-    ...config,
     silent: false,
     timeout: 500,
     onInit: true,
+    ...config,
   }
 
   let throttled = false
