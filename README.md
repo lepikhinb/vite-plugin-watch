@@ -21,6 +21,7 @@ import { defineConfig } from "vite"
 import { watch } from "vite-plugin-watch"
 
 export default defineConfig({
+  plugins: [ 
     watch({
       pattern: "app/{Data,Enums}/**/*.php",
       command: "php artisan typescript:transform",
