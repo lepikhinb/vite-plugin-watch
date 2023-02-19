@@ -9,11 +9,19 @@ export const watch = (config: {
   silent?: boolean
   timeout?: number
   onInit?: boolean
+  output?: (output: string) => void
+  errorOutput?: (error: string) => void
 }): PluginOption => {
   const options = {
     silent: false,
     timeout: 500,
     onInit: true,
+    output: (output: string) => {
+      console.log(output)
+    },
+    errorOutput: (error: string) => {
+      console.error(error)
+    },
     ...config,
   }
 
@@ -21,8 +29,8 @@ export const watch = (config: {
 
   const execute = () => {
     exec(options.command, (exception, output, error) => {
-      if (!options.silent && output) console.log(output)
-      if (!options.silent && error) console.error(error)
+      if (!options.silent && output) options.output(output)
+      if (!options.silent && error) options.errorOutput(error)
     })
   }
 
