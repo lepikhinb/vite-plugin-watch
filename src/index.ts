@@ -44,7 +44,7 @@ export const watch = (config: {
 
       const patterns = Array.of(options.pattern).flat()
       const shouldRun = patterns.find((pattern) =>
-        minimatch(file, path.resolve(server.config.root, pattern))
+        minimatch(file, path.resolve(server.config.root, pattern).replaceAll("\\", "/"))
       )
 
       if (shouldRun) {
