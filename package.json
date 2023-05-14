@@ -26,6 +26,7 @@
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/vite-plugin-watch.js",
       "require": "./dist/vite-plugin-watch.umd.cjs"
     }
