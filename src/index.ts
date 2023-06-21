@@ -1,7 +1,7 @@
 import { PluginOption } from "vite"
 import minimatch from "minimatch"
-import path from "path"
-import { exec } from "child_process"
+import path from "node:path"
+import { exec } from "node:child_process"
 
 export const watch = (config: {
   pattern: string | string[]
