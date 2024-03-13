@@ -1,11 +1,13 @@
 {
   "name": "vite-plugin-watch",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "dev": "vite",
     "build": "npm run lint && npm run format && vite build && tsc --declaration --emitDeclarationOnly",
     "lint": "eslint \"src/**\" --fix",
-    "format": "prettier src/ --write"
+    "format": "prettier src/ --write",
+    "patch": "npm version patch --no-git-tag-version",
+    "minor": "npm version minor --no-git-tag-version"
   },
   "description": "Vite plugin to run custom commands on file changes",
   "keywords": [
