@@ -5,7 +5,7 @@ import { exec } from "node:child_process"
 
 export const watch = (config: {
   pattern: string | string[]
-  command: string
+  command: string | string[]
   silent?: boolean
   timeout?: number
   onInit?: boolean
@@ -20,9 +20,11 @@ export const watch = (config: {
   let throttled = false
 
   const execute = () => {
-    exec(options.command, (exception, output, error) => {
-      if (!options.silent && output) console.log(output)
-      if (!options.silent && error) console.error(error)
+    [].concat(options.command).forEach(command => {
+      exec(options.command, (exception, output, error) => {
+        if (!options.silent && output) console.log(output)
+        if (!options.silent && error) console.error(error)
+      })
     })
   }
 
