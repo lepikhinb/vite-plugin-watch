@@ -21,7 +21,7 @@ export const watch = (config: {
 
   const execute = () => {
     [].concat(options.command).forEach(command => {
-      exec(options.command, (exception, output, error) => {
+      exec(command, (exception, output, error) => {
         if (!options.silent && output) console.log(output)
         if (!options.silent && error) console.error(error)
       })
