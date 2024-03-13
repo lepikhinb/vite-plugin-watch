@@ -40,13 +40,13 @@ The paths of tracked files are configured as [glob patterns](<https://en.wikiped
 
 ## Plugin options
 
-| name    | type             | description                                 | default |
-| ------- | ---------------- | ------------------------------------------- | ------- |
-| pattern | string\|string[] | Tracked files paths                         |         |
-| command | string           | A command executed on file change           |         |
-| timeout | number           | Timeout between triggering the same command | 500     |
-| silent  | boolean          | Hide the output in the console              | false   |
-| onInit  | boolean          | Run the command on Vite start               | true    |
+| name    | type             | description                                              | default |
+| ------- | ---------------- | -------------------------------------------------------- | ------- |
+| pattern | string\|string[] | Tracked files paths                                      |         |
+| command | string\|string[] | One or multiple command(s) to be executed on file change |         |
+| timeout | number           | Timeout between triggering the same command              | 500     |
+| silent  | boolean          | Hide the output in the console                           | false   |
+| onInit  | boolean          | Run the command on Vite start                            | true    |
 
 ## Advanced Inertia
 
