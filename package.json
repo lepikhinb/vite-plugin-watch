@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-watch",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "dev": "vite",
     "build": "npm run lint && npm run format && vite build && tsc --declaration --emitDeclarationOnly",

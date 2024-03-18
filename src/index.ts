@@ -20,7 +20,7 @@ export const watch = (config: {
   let throttled = false
 
   const execute = () => {
-    [].concat(options.command).forEach((command) => {
+    ;[options.command].flat().forEach((command) => {
       exec(command, (exception, output, error) => {
         if (!options.silent && output) console.log(output)
         if (!options.silent && error) console.error(error)
